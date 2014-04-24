@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5EBA5FB19058A6300098B30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA5FA19058A6300098B30 /* Foundation.framework */; };
+		D5EBA5FD19058A6300098B30 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA5FC19058A6300098B30 /* CoreGraphics.framework */; };
+		D5EBA5FF19058A6300098B30 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA5FE19058A6300098B30 /* UIKit.framework */; };
+		D5EBA60519058A6300098B30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5EBA60319058A6300098B30 /* InfoPlist.strings */; };
+		D5EBA60719058A6300098B30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA60619058A6300098B30 /* main.m */; };
+		D5EBA60B19058A6300098B30 /* SLFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA60A19058A6300098B30 /* SLFAppDelegate.m */; };
+		D5EBA60D19058A6300098B30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5EBA60C19058A6300098B30 /* Images.xcassets */; };
+		D5EBA61419058A6400098B30 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA61319058A6400098B30 /* XCTest.framework */; };
+		D5EBA61519058A6400098B30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA5FA19058A6300098B30 /* Foundation.framework */; };
+		D5EBA61619058A6400098B30 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA5FE19058A6300098B30 /* UIKit.framework */; };
+		D5EBA61E19058A6400098B30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5EBA61C19058A6400098B30 /* InfoPlist.strings */; };
+		D5EBA62019058A6400098B30 /* SelfyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA61F19058A6400098B30 /* SelfyTests.m */; };
+		D5EBA62B19058AB400098B30 /* SLFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA62A19058AB400098B30 /* SLFTableViewController.m */; };
+		D5EBA6311905A89F00098B30 /* SLFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA6301905A89F00098B30 /* SLFTableViewCell.m */; };
+		D5EBA6331906B89800098B30 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA6321906B89800098B30 /* Parse.framework */; };
+		D5EBA6351906BD2000098B30 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA6341906BD2000098B30 /* AudioToolbox.framework */; };
+		D5EBA6371906BD3200098B30 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA6361906BD3200098B30 /* CFNetwork.framework */; };
+		D5EBA6391906BD3F00098B30 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA6381906BD3F00098B30 /* CoreLocation.framework */; };
+		D5EBA63B1906BD5D00098B30 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA63A1906BD5D00098B30 /* libz.1.1.3.dylib */; };
+		D5EBA63D1906BD6A00098B30 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA63C1906BD6A00098B30 /* MobileCoreServices.framework */; };
+		D5EBA63F1906BD7F00098B30 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA63E1906BD7F00098B30 /* QuartzCore.framework */; };
+		D5EBA6411906BDA700098B30 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA6401906BDA700098B30 /* Security.framework */; };
+		D5EBA6431906BDB100098B30 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA6421906BDB100098B30 /* StoreKit.framework */; };
+		D5EBA6451906BDBB00098B30 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA6441906BDBB00098B30 /* SystemConfiguration.framework */; };
+		D5EBA6481906D1F400098B30 /* SLFLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA6471906D1F400098B30 /* SLFLoginController.m */; };
+		D5EBA64B1906E67C00098B30 /* SLFSelfyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA64A1906E67C00098B30 /* SLFSelfyViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5EBA61719058A6400098B30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5EBA5EF19058A6300098B30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5EBA5F619058A6300098B30;
+			remoteInfo = Selfy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5EBA5F719058A6300098B30 /* Selfy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Selfy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5EBA5FA19058A6300098B30 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D5EBA5FC19058A6300098B30 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D5EBA5FE19058A6300098B30 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D5EBA60219058A6300098B30 /* Selfy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Selfy-Info.plist"; sourceTree = "<group>"; };
+		D5EBA60419058A6300098B30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D5EBA60619058A6300098B30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D5EBA60819058A6300098B30 /* Selfy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Selfy-Prefix.pch"; sourceTree = "<group>"; };
+		D5EBA60919058A6300098B30 /* SLFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLFAppDelegate.h; sourceTree = "<group>"; };
+		D5EBA60A19058A6300098B30 /* SLFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLFAppDelegate.m; sourceTree = "<group>"; };
+		D5EBA60C19058A6300098B30 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D5EBA61219058A6400098B30 /* SelfyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelfyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5EBA61319058A6400098B30 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D5EBA61B19058A6400098B30 /* SelfyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SelfyTests-Info.plist"; sourceTree = "<group>"; };
+		D5EBA61D19058A6400098B30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D5EBA61F19058A6400098B30 /* SelfyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfyTests.m; sourceTree = "<group>"; };
+		D5EBA62919058AB400098B30 /* SLFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFTableViewController.h; sourceTree = "<group>"; };
+		D5EBA62A19058AB400098B30 /* SLFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFTableViewController.m; sourceTree = "<group>"; };
+		D5EBA62F1905A89F00098B30 /* SLFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFTableViewCell.h; sourceTree = "<group>"; };
+		D5EBA6301905A89F00098B30 /* SLFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFTableViewCell.m; sourceTree = "<group>"; };
+		D5EBA6321906B89800098B30 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		D5EBA6341906BD2000098B30 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D5EBA6361906BD3200098B30 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D5EBA6381906BD3F00098B30 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D5EBA63A1906BD5D00098B30 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		D5EBA63C1906BD6A00098B30 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D5EBA63E1906BD7F00098B30 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D5EBA6401906BDA700098B30 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D5EBA6421906BDB100098B30 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D5EBA6441906BDBB00098B30 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D5EBA6461906D1F300098B30 /* SLFLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFLoginController.h; sourceTree = "<group>"; };
+		D5EBA6471906D1F400098B30 /* SLFLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFLoginController.m; sourceTree = "<group>"; };
+		D5EBA6491906E67C00098B30 /* SLFSelfyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSelfyViewController.h; sourceTree = "<group>"; };
+		D5EBA64A1906E67C00098B30 /* SLFSelfyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSelfyViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5EBA5F419058A6300098B30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5EBA6451906BDBB00098B30 /* SystemConfiguration.framework in Frameworks */,
+				D5EBA6431906BDB100098B30 /* StoreKit.framework in Frameworks */,
+				D5EBA6411906BDA700098B30 /* Security.framework in Frameworks */,
+				D5EBA63F1906BD7F00098B30 /* QuartzCore.framework in Frameworks */,
+				D5EBA63D1906BD6A00098B30 /* MobileCoreServices.framework in Frameworks */,
+				D5EBA63B1906BD5D00098B30 /* libz.1.1.3.dylib in Frameworks */,
+				D5EBA6391906BD3F00098B30 /* CoreLocation.framework in Frameworks */,
+				D5EBA6371906BD3200098B30 /* CFNetwork.framework in Frameworks */,
+				D5EBA6351906BD2000098B30 /* AudioToolbox.framework in Frameworks */,
+				D5EBA5FD19058A6300098B30 /* CoreGraphics.framework in Frameworks */,
+				D5EBA5FF19058A6300098B30 /* UIKit.framework in Frameworks */,
+				D5EBA6331906B89800098B30 /* Parse.framework in Frameworks */,
+				D5EBA5FB19058A6300098B30 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5EBA60F19058A6400098B30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5EBA61419058A6400098B30 /* XCTest.framework in Frameworks */,
+				D5EBA61619058A6400098B30 /* UIKit.framework in Frameworks */,
+				D5EBA61519058A6400098B30 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5EBA5EE19058A6300098B30 = {
+			isa = PBXGroup;
+			children = (
+				D5EBA62F1905A89F00098B30 /* SLFTableViewCell.h */,
+				D5EBA6301905A89F00098B30 /* SLFTableViewCell.m */,
+				D5EBA62919058AB400098B30 /* SLFTableViewController.h */,
+				D5EBA62A19058AB400098B30 /* SLFTableViewController.m */,
+				D5EBA6461906D1F300098B30 /* SLFLoginController.h */,
+				D5EBA6471906D1F400098B30 /* SLFLoginController.m */,
+				D5EBA6491906E67C00098B30 /* SLFSelfyViewController.h */,
+				D5EBA64A1906E67C00098B30 /* SLFSelfyViewController.m */,
+				D5EBA60019058A6300098B30 /* Selfy */,
+				D5EBA61919058A6400098B30 /* SelfyTests */,
+				D5EBA5F919058A6300098B30 /* Frameworks */,
+				D5EBA5F819058A6300098B30 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5EBA5F819058A6300098B30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5EBA5F719058A6300098B30 /* Selfy.app */,
+				D5EBA61219058A6400098B30 /* SelfyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5EBA5F919058A6300098B30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5EBA6441906BDBB00098B30 /* SystemConfiguration.framework */,
+				D5EBA6421906BDB100098B30 /* StoreKit.framework */,
+				D5EBA6401906BDA700098B30 /* Security.framework */,
+				D5EBA63E1906BD7F00098B30 /* QuartzCore.framework */,
+				D5EBA63C1906BD6A00098B30 /* MobileCoreServices.framework */,
+				D5EBA63A1906BD5D00098B30 /* libz.1.1.3.dylib */,
+				D5EBA6381906BD3F00098B30 /* CoreLocation.framework */,
+				D5EBA6361906BD3200098B30 /* CFNetwork.framework */,
+				D5EBA6341906BD2000098B30 /* AudioToolbox.framework */,
+				D5EBA6321906B89800098B30 /* Parse.framework */,
+				D5EBA5FA19058A6300098B30 /* Foundation.framework */,
+				D5EBA5FC19058A6300098B30 /* CoreGraphics.framework */,
+				D5EBA5FE19058A6300098B30 /* UIKit.framework */,
+				D5EBA61319058A6400098B30 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5EBA60019058A6300098B30 /* Selfy */ = {
+			isa = PBXGroup;
+			children = (
+				D5EBA60919058A6300098B30 /* SLFAppDelegate.h */,
+				D5EBA60A19058A6300098B30 /* SLFAppDelegate.m */,
+				D5EBA60C19058A6300098B30 /* Images.xcassets */,
+				D5EBA60119058A6300098B30 /* Supporting Files */,
+			);
+			path = Selfy;
+			sourceTree = "<group>";
+		};
+		D5EBA60119058A6300098B30 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5EBA60219058A6300098B30 /* Selfy-Info.plist */,
+				D5EBA60319058A6300098B30 /* InfoPlist.strings */,
+				D5EBA60619058A6300098B30 /* main.m */,
+				D5EBA60819058A6300098B30 /* Selfy-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5EBA61919058A6400098B30 /* SelfyTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5EBA61F19058A6400098B30 /* SelfyTests.m */,
+				D5EBA61A19058A6400098B30 /* Supporting Files */,
+			);
+			path = SelfyTests;
+			sourceTree = "<group>";
+		};
+		D5EBA61A19058A6400098B30 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5EBA61B19058A6400098B30 /* SelfyTests-Info.plist */,
+				D5EBA61C19058A6400098B30 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5EBA5F619058A6300098B30 /* Selfy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5EBA62319058A6400098B30 /* Build configuration list for PBXNativeTarget "Selfy" */;
+			buildPhases = (
+				D5EBA5F319058A6300098B30 /* Sources */,
+				D5EBA5F419058A6300098B30 /* Frameworks */,
+				D5EBA5F519058A6300098B30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Selfy;
+			productName = Selfy;
+			productReference = D5EBA5F719058A6300098B30 /* Selfy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5EBA61119058A6400098B30 /* SelfyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5EBA62619058A6400098B30 /* Build configuration list for PBXNativeTarget "SelfyTests" */;
+			buildPhases = (
+				D5EBA60E19058A6400098B30 /* Sources */,
+				D5EBA60F19058A6400098B30 /* Frameworks */,
+				D5EBA61019058A6400098B30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5EBA61819058A6400098B30 /* PBXTargetDependency */,
+			);
+			name = SelfyTests;
+			productName = SelfyTests;
+			productReference = D5EBA61219058A6400098B30 /* SelfyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5EBA5EF19058A6300098B30 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SLF;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Austin Nolan";
+				TargetAttributes = {
+					D5EBA61119058A6400098B30 = {
+						TestTargetID = D5EBA5F619058A6300098B30;
+					};
+				};
+			};
+			buildConfigurationList = D5EBA5F219058A6300098B30 /* Build configuration list for PBXProject "Selfy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D5EBA5EE19058A6300098B30;
+			productRefGroup = D5EBA5F819058A6300098B30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5EBA5F619058A6300098B30 /* Selfy */,
+				D5EBA61119058A6400098B30 /* SelfyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5EBA5F519058A6300098B30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5EBA60519058A6300098B30 /* InfoPlist.strings in Resources */,
+				D5EBA60D19058A6300098B30 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5EBA61019058A6400098B30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5EBA61E19058A6400098B30 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5EBA5F319058A6300098B30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5EBA6481906D1F400098B30 /* SLFLoginController.m in Sources */,
+				D5EBA60B19058A6300098B30 /* SLFAppDelegate.m in Sources */,
+				D5EBA60719058A6300098B30 /* main.m in Sources */,
+				D5EBA6311905A89F00098B30 /* SLFTableViewCell.m in Sources */,
+				D5EBA64B1906E67C00098B30 /* SLFSelfyViewController.m in Sources */,
+				D5EBA62B19058AB400098B30 /* SLFTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5EBA60E19058A6400098B30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5EBA62019058A6400098B30 /* SelfyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5EBA61819058A6400098B30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5EBA5F619058A6300098B30 /* Selfy */;
+			targetProxy = D5EBA61719058A6400098B30 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D5EBA60319058A6300098B30 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5EBA60419058A6300098B30 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D5EBA61C19058A6400098B30 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5EBA61D19058A6400098B30 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D5EBA62119058A6400098B30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D5EBA62219058A6400098B30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5EBA62419058A6400098B30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Selfy/Selfy-Prefix.pch";
+				INFOPLIST_FILE = "Selfy/Selfy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D5EBA62519058A6400098B30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Selfy/Selfy-Prefix.pch";
+				INFOPLIST_FILE = "Selfy/Selfy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D5EBA62719058A6400098B30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Selfy.app/Selfy";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Selfy/Selfy-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SelfyTests/SelfyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D5EBA62819058A6400098B30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Selfy.app/Selfy";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Selfy/Selfy-Prefix.pch";
+				INFOPLIST_FILE = "SelfyTests/SelfyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5EBA5F219058A6300098B30 /* Build configuration list for PBXProject "Selfy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5EBA62119058A6400098B30 /* Debug */,
+				D5EBA62219058A6400098B30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5EBA62319058A6400098B30 /* Build configuration list for PBXNativeTarget "Selfy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5EBA62419058A6400098B30 /* Debug */,
+				D5EBA62519058A6400098B30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D5EBA62619058A6400098B30 /* Build configuration list for PBXNativeTarget "SelfyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5EBA62719058A6400098B30 /* Debug */,
+				D5EBA62819058A6400098B30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5EBA5EF19058A6300098B30 /* Project object */;
+}
