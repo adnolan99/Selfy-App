@@ -26,13 +26,41 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    //Jo's App Key
+//    [Parse setApplicationId:@"H1JHLiA7kFRmIWvtbkHDcnA1Caj4UofHxRx6UZAB"
+//                  clientKey:@"dKLyXccYHUy1MXNgrdR2Sq5b1fNQoTr4clSXVd3p"];
     
-    [Parse setApplicationId:@"H1JHLiA7kFRmIWvtbkHDcnA1Caj4UofHxRx6UZAB"
-                  clientKey:@"dKLyXccYHUy1MXNgrdR2Sq5b1fNQoTr4clSXVd3p"];
+    //My app Key
+    [Parse setApplicationId:@"9ICdECQa5kiOSYWw4v0hR449mQgihgGarGa8WEnv"
+                  clientKey:@"rR34RYx4VHANSB8D0DkzzFQRy55u5fCZSTOfO19y"];
     
     [PFUser enableAutomaticUser];
     
    
+    UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:[[SLFLoginController alloc]initWithNibName:nil bundle:nil]];
+    
+    PFUser * user = [PFUser currentUser];
+    
+    NSString * userName = user.username;
+    
+    //Use for testing
+
+    userName = nil;
+    
+    
+    
+    if (userName == nil) {
+        navController = [[UINavigationController alloc]initWithRootViewController:[[SLFLoginController alloc]initWithNibName:nil bundle:nil]];
+        navController.navigationBar.hidden = YES;
+
+    } else {
+        navController = [[UINavigationController alloc]initWithRootViewController:[[SLFTableViewController alloc]initWithStyle: UITableViewStylePlain]];
+
+    }
+    
+    self.window.rootViewController = navController;
+    
+    
     
     //SLFLoginController * rootViewController = [[SLFLoginController alloc] initWithNibName:nil bundle:nil];
     

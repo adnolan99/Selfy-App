@@ -104,6 +104,11 @@
     [self.delegate addNewSelfy:newSelfy];
     
     
+    //NewPFObject classs name "UserSelfy"
+    //put a png file inside app
+    //PFFile
+    
+    //
     
     
     

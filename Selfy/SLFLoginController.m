@@ -8,6 +8,8 @@
 
 #import "SLFLoginController.h"
 
+#import "SLFTableViewController.h"
+
 #import <Parse/Parse.h>
 
 
@@ -103,7 +105,34 @@
          user.username = userName.text;
          user.password = password.text;
          
-         [user saveInBackground];
+         userName.text = nil;
+         password.text = nil;
+         
+         //[UIActivityIndicatorView
+         // start...
+         // addSubview
+         // run method
+         
+         
+         
+         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+             
+             if (error == nil)
+             {
+    
+                 self.navigationController.navigationBarHidden = NO;
+                 self.navigationController.viewControllers = @[[[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain]];
+             }
+             else
+             {
+                 //error.userInfo[@"error"]
+                 //UIAlertView with message
+                 
+                 // activity indicator remove
+             }
+             
+             
+         }];
          
          NSLog(@"Submitting");
      }
