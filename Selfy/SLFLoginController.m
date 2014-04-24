@@ -8,6 +8,9 @@
 
 #import "SLFLoginController.h"
 
+
+#import "SLFTableViewController.h"
+
 #import <Parse/Parse.h>
 
 
@@ -59,34 +62,34 @@
     loginForm = [[UIView alloc] initWithFrame:self.view.frame];
     
     [self.view addSubview:loginForm];
-    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 280, 280)];
-    imageView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 500)];
+    imageView.backgroundColor = [UIColor purpleColor];
     [loginForm addSubview:imageView];
     
-    userName = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 100, 20)];
-    userName.backgroundColor = [UIColor colorWithWhite:0.1 alpha:.05];
+    userName = [[UITextField alloc] initWithFrame:CGRectMake(100, 30, 100, 20)];
+    userName.backgroundColor = [UIColor redColor];
     userName.layer.cornerRadius = 10;
     userName.placeholder = @"Username";
-    userName.tintColor = [UIColor lightGrayColor];
+    userName.tintColor = [UIColor redColor];
     [userName resignFirstResponder];
-    [self.view addSubview:userName];
+    [loginForm addSubview:userName];
     
-    password = [[UITextField alloc] initWithFrame:CGRectMake(20, 50, 100, 20)];
-    password.backgroundColor = [UIColor colorWithWhite:0.1 alpha:.05];
+    password = [[UITextField alloc] initWithFrame:CGRectMake(100, 200, 100, 20)];
+    password.backgroundColor = [UIColor orangeColor];
     password.layer.cornerRadius = 10;
     password.secureTextEntry =YES;
     password.placeholder = @"Password";
-    password.tintColor = [UIColor lightGrayColor];
-    [self.view addSubview:password];
+    password.tintColor = [UIColor orangeColor];
+    [loginForm addSubview:password];
 
     
-    submitButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, 100, 20)];
-    submitButton.backgroundColor = [UIColor colorWithWhite:0.5 alpha:.05];
+    submitButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 220, 100, 20)];
+    submitButton.backgroundColor = [UIColor blueColor];
     submitButton.layer.cornerRadius = 10;
     [submitButton setTitle:@"Submit" forState:UIControlStateNormal];
-    submitButton.tintColor = [UIColor lightGrayColor];
+    submitButton.tintColor = [UIColor blueColor];
     [submitButton addTarget:self action:@selector(userLogin) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:submitButton];
+    [loginForm addSubview:submitButton];
     
     
     // Do any additional setup after loading the view.
@@ -104,6 +107,13 @@
          user.password = password.text;
          
          [user saveInBackground];
+         
+         UIViewController * stv =[[SLFTableViewController alloc] init];
+         
+         [[self navigationController] pushViewController:stv animated:YES];
+         
+         //[self.view addSubview];
+         
          
          NSLog(@"Submitting");
      }

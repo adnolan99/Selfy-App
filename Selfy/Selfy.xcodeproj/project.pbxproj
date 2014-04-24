@@ -33,6 +33,7 @@
 		D5EBA6451906BDBB00098B30 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA6441906BDBB00098B30 /* SystemConfiguration.framework */; };
 		D5EBA6481906D1F400098B30 /* SLFLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA6471906D1F400098B30 /* SLFLoginController.m */; };
 		D5EBA64B1906E67C00098B30 /* SLFSelfyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA64A1906E67C00098B30 /* SLFSelfyViewController.m */; };
+		D5EBA69A19098A9000098B30 /* SLFNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA69919098A9000098B30 /* SLFNavController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		D5EBA6471906D1F400098B30 /* SLFLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFLoginController.m; sourceTree = "<group>"; };
 		D5EBA6491906E67C00098B30 /* SLFSelfyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSelfyViewController.h; sourceTree = "<group>"; };
 		D5EBA64A1906E67C00098B30 /* SLFSelfyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSelfyViewController.m; sourceTree = "<group>"; };
+		D5EBA69819098A9000098B30 /* SLFNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFNavController.h; sourceTree = "<group>"; };
+		D5EBA69919098A9000098B30 /* SLFNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFNavController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,14 +122,9 @@
 		D5EBA5EE19058A6300098B30 = {
 			isa = PBXGroup;
 			children = (
+				D5EBA6971909898D00098B30 /* Controllers */,
 				D5EBA62F1905A89F00098B30 /* SLFTableViewCell.h */,
 				D5EBA6301905A89F00098B30 /* SLFTableViewCell.m */,
-				D5EBA62919058AB400098B30 /* SLFTableViewController.h */,
-				D5EBA62A19058AB400098B30 /* SLFTableViewController.m */,
-				D5EBA6461906D1F300098B30 /* SLFLoginController.h */,
-				D5EBA6471906D1F400098B30 /* SLFLoginController.m */,
-				D5EBA6491906E67C00098B30 /* SLFSelfyViewController.h */,
-				D5EBA64A1906E67C00098B30 /* SLFSelfyViewController.m */,
 				D5EBA60019058A6300098B30 /* Selfy */,
 				D5EBA61919058A6400098B30 /* SelfyTests */,
 				D5EBA5F919058A6300098B30 /* Frameworks */,
@@ -202,6 +200,21 @@
 				D5EBA61C19058A6400098B30 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5EBA6971909898D00098B30 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D5EBA69819098A9000098B30 /* SLFNavController.h */,
+				D5EBA69919098A9000098B30 /* SLFNavController.m */,
+				D5EBA62919058AB400098B30 /* SLFTableViewController.h */,
+				D5EBA62A19058AB400098B30 /* SLFTableViewController.m */,
+				D5EBA6491906E67C00098B30 /* SLFSelfyViewController.h */,
+				D5EBA64A1906E67C00098B30 /* SLFSelfyViewController.m */,
+				D5EBA6461906D1F300098B30 /* SLFLoginController.h */,
+				D5EBA6471906D1F400098B30 /* SLFLoginController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5EBA6481906D1F400098B30 /* SLFLoginController.m in Sources */,
+				D5EBA69A19098A9000098B30 /* SLFNavController.m in Sources */,
 				D5EBA60B19058A6300098B30 /* SLFAppDelegate.m in Sources */,
 				D5EBA60719058A6300098B30 /* main.m in Sources */,
 				D5EBA6311905A89F00098B30 /* SLFTableViewCell.m in Sources */,
@@ -512,6 +526,7 @@
 				D5EBA62519058A6400098B30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5EBA62619058A6400098B30 /* Build configuration list for PBXNativeTarget "SelfyTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +535,7 @@
 				D5EBA62819058A6400098B30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

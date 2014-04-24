@@ -4,7 +4,8 @@
 //
 //  Created by Austin Nolan on 4/21/14.
 //  Copyright (c) 2014 Austin Nolan. All rights reserved.
-//
+
+//hello
 
 #import "SLFAppDelegate.h"
 
@@ -38,9 +39,26 @@
     
     //SLFSelfyViewController * rootViewController = [[SLFSelfyViewController alloc] initWithNibName:nil bundle:nil];
 
-    SLFLoginController * rootViewController = [[SLFLoginController alloc] initWithNibName:nil bundle:nil];
+    //SLFLoginController * rootViewController = [[SLFLoginController alloc] initWithNibName:nil bundle:nil];
     
-    self.window.rootViewController = rootViewController;
+    //self.window.rootViewController = rootViewController;
+    
+    
+    
+//    
+//    UINavigationController * NavVC = [[UINavigationController alloc] initWithRootViewController:UITableViewStylePlain];
+//
+//    self.window.rootViewController = NavVC;
+//    
+//    self.window.rootViewController = [[SLFLoginController alloc]init];
+    
+    
+    UINavigationController * NavVC= [[UINavigationController alloc] initWithRootViewController:[[SLFLoginController alloc] init]];
+    
+    NavVC.navigationBar.hidden = YES;
+    
+    self.window.rootViewController = NavVC;
+    
     
     
     

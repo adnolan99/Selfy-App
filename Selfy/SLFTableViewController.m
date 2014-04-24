@@ -48,7 +48,7 @@
         // Custom initialization
     
         header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
-        header.backgroundColor = [UIColor grayColor];
+        header.backgroundColor = [UIColor yellowColor];
         self.tableView.tableHeaderView = header;
         
         
@@ -119,14 +119,10 @@
 }
 
 
-
 -(void)settingsMenu
 {
     
 }
-
-
-
 
 
 - (void)viewDidLoad
