@@ -62,11 +62,11 @@
     
     [self.view addSubview:loginForm];
     UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 280, 280)];
-    imageView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+    imageView.backgroundColor = [UIColor yellowColor];
     [loginForm addSubview:imageView];
     
     userName = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 100, 20)];
-    userName.backgroundColor = [UIColor colorWithWhite:0.1 alpha:.05];
+    userName.backgroundColor = [UIColor orangeColor];
     userName.layer.cornerRadius = 10;
     userName.placeholder = @"Username";
     userName.tintColor = [UIColor lightGrayColor];
@@ -74,7 +74,7 @@
     [self.view addSubview:userName];
     
     password = [[UITextField alloc] initWithFrame:CGRectMake(20, 50, 100, 20)];
-    password.backgroundColor = [UIColor colorWithWhite:0.1 alpha:.05];
+    password.backgroundColor = [UIColor blueColor];
     password.layer.cornerRadius = 10;
     password.secureTextEntry =YES;
     password.placeholder = @"Password";
@@ -108,11 +108,21 @@
          userName.text = nil;
          password.text = nil;
          
+         
+         [userName resignFirstResponder];
+         [password resignFirstResponder];
+         
          //[UIActivityIndicatorView
          // start...
          // addSubview
          // run method
          
+         UIActivityIndicatorView *activityIndicator;
+         activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+         activityIndicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+         activityIndicator.center = self.view.center;
+         [activityIndicator startAnimating];
+         [self.view addSubview: activityIndicator];
          
          
          [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -125,8 +135,13 @@
              }
              else
              {
-                 //error.userInfo[@"error"]
-                 //UIAlertView with message
+              
+                 
+                 
+//                 
+//                 UIAlertView * alert;
+//                 error.userInfo[@"error"];
+
                  
                  // activity indicator remove
              }
