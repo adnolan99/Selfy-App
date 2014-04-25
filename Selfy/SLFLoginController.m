@@ -71,6 +71,7 @@
     userName.placeholder = @"Username";
     userName.tintColor = [UIColor lightGrayColor];
     [userName resignFirstResponder];
+    userName.autocapitalizationType = NO;
     [self.view addSubview:userName];
     
     password = [[UITextField alloc] initWithFrame:CGRectMake(20, 90, 100, 20)];

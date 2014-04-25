@@ -33,13 +33,15 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        UIImageView * popeye = [[UIImageView alloc] initWithFrame:CGRectMake(20, 30, 20, 20)];
         
+        [self.view addSubview:newForm];
+
+        UIImageView * popeye = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
         
         popeye.image = [UIImage imageNamed:@"popeye"];
         
-        //[self.contentView addSubview:popeye];
-        
+        [newForm addSubview:popeye];
+
         
         
         
@@ -126,7 +128,7 @@
     
     [newSelfy saveInBackground];
     
-    
+    NSLog(@"Submit");
     
     //NSDictionary * newSelfy = [[NSDictionary alloc] init];
     

@@ -145,6 +145,15 @@
     
     
     self.navigationItem.rightBarButtonItem = addNewSelfyButton;
+    
+    UIViewController * slideUp = [[UIViewController alloc] init];
+    
+    
+    self.navigationController.modalTransitionStyle = slideUp;
+
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
