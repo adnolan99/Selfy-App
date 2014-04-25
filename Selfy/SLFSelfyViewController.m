@@ -41,7 +41,7 @@
         //[self.contentView addSubview:popeye];
         
         
-        
+        self.view.backgroundColor = [UIColor whiteColor];
         
         
         
@@ -63,6 +63,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    UIBarButtonItem * cancelNewSelfyButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelNewSelfy)];
+    
+    cancelNewSelfyButton.tintColor = [UIColor redColor];
+    self.navigationItem.rightBarButtonItem = cancelNewSelfyButton;
+    
+    
+    [self setNeedsStatusBarAppearanceUpdate];
+    
+    
+    
     
     
     newForm = [[UIView alloc] initWithFrame:self.view.frame];
@@ -96,6 +108,14 @@
     
     // Do any additional setup after loading the view.
 }
+
+
+-(void)cancelNewSelfy
+{
+    
+}
+
+
 
 
 -(void)tapScreen
@@ -165,5 +185,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 
 @end

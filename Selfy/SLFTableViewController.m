@@ -118,6 +118,33 @@
     UIViewController * SVC =[[SLFSelfyViewController alloc] init];
     
     [[self navigationController] pushViewController:SVC animated:YES];
+
+    SLFSelfyViewController * newSelfyVC = [[SLFSelfyViewController alloc] initWithNibName:nil bundle:nil];
+    
+    
+    UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:newSelfyVC];
+    
+    
+    nc.navigationBar.barTintColor = [UIColor blueColor];
+    
+    
+    UIBarButtonItem * cancelNewSelfyButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelNewSelfy)];
+    
+    cancelNewSelfyButton.tintColor = [UIColor redColor];
+    nc.navigationItem.rightBarButtonItem = cancelNewSelfyButton;
+    
+    
+    [self.navigationController presentViewController:nc animated:YES completion:^{
+    
+    
+    
+    
+    
+    
+    }];
+
+
+
 }
 
 
