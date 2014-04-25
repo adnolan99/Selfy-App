@@ -45,9 +45,9 @@
     
     //Use for testing
 
-    userName = nil;
+    //userName = nil;
     
-    
+
     
     if (userName == nil) {
         navController = [[UINavigationController alloc]initWithRootViewController:[[SLFLoginController alloc]initWithNibName:nil bundle:nil]];
@@ -59,16 +59,16 @@
     }
     
     self.window.rootViewController = navController;
-    
+
     
     
     //SLFLoginController * rootViewController = [[SLFLoginController alloc] initWithNibName:nil bundle:nil];
     
     //SLFSelfyViewController * rootViewController = [[SLFSelfyViewController alloc] initWithNibName:nil bundle:nil];
 
-    SLFLoginController * rootViewController = [[SLFLoginController alloc] initWithNibName:nil bundle:nil];
+    //SLFLoginController * rootViewController = [[SLFLoginController alloc] initWithNibName:nil bundle:nil];
     
-    self.window.rootViewController = rootViewController;
+    //self.window.rootViewController = rootViewController;
     
     
     

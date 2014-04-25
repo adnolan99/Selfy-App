@@ -61,11 +61,11 @@
     loginForm = [[UIView alloc] initWithFrame:self.view.frame];
     
     [self.view addSubview:loginForm];
-    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 280, 280)];
+    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     imageView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
     [loginForm addSubview:imageView];
     
-    userName = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 100, 20)];
+    userName = [[UITextField alloc] initWithFrame:CGRectMake(20, 60, 100, 20)];
     userName.backgroundColor = [UIColor colorWithWhite:0.1 alpha:.05];
     userName.layer.cornerRadius = 10;
     userName.placeholder = @"Username";
@@ -73,7 +73,7 @@
     [userName resignFirstResponder];
     [self.view addSubview:userName];
     
-    password = [[UITextField alloc] initWithFrame:CGRectMake(20, 50, 100, 20)];
+    password = [[UITextField alloc] initWithFrame:CGRectMake(20, 90, 100, 20)];
     password.backgroundColor = [UIColor colorWithWhite:0.1 alpha:.05];
     password.layer.cornerRadius = 10;
     password.secureTextEntry =YES;
@@ -82,7 +82,7 @@
     [self.view addSubview:password];
 
     
-    submitButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, 100, 20)];
+    submitButton = [[UIButton alloc] initWithFrame:CGRectMake(20,120, 100, 20)];
     submitButton.backgroundColor = [UIColor colorWithWhite:0.5 alpha:.05];
     submitButton.layer.cornerRadius = 10;
     [submitButton setTitle:@"Submit" forState:UIControlStateNormal];
@@ -93,6 +93,16 @@
     
     // Do any additional setup after loading the view.
 }
+
+
+
+
+//remove auto Caps, animate login fields up if you are not already.
+
+
+
+
+
 
 -(void)userLogin
      {
@@ -107,6 +117,15 @@
          
          userName.text = nil;
          password.text = nil;
+         
+         
+         UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+         activityIndicator.color= [UIColor redColor];
+         activityIndicator.frame = CGRectMake(0, 10, 100, 50);
+         
+         [activityIndicator startAnimating];
+         
+         
          
          //[UIActivityIndicatorView
          // start...
@@ -125,6 +144,14 @@
              }
              else
              {
+                 
+                 NSString * errorDescription = error.userInfo[@"error"];
+                 
+                 UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"" message:errorDescription delegate:@"Try Again" cancelButtonTitle:@"ALERT" otherButtonTitles:nil, nil];
+                 
+                 
+                 [alertView show];
+                 
                  //error.userInfo[@"error"]
                  //UIAlertView with message
                  

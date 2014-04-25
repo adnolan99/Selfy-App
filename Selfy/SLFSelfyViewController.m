@@ -8,6 +8,9 @@
 
 #import "SLFSelfyViewController.h"
 
+#import <Parse/Parse.h>
+
+
 @interface SLFSelfyViewController () <UITextViewDelegate>
 
 {
@@ -29,6 +32,18 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
+        UIImageView * popeye = [[UIImageView alloc] initWithFrame:CGRectMake(20, 30, 20, 20)];
+        
+        
+        popeye.image = [UIImage imageNamed:@"popeye"];
+        
+        //[self.contentView addSubview:popeye];
+        
+        
+        
+        
+        
         
         // Custom initialization
     }
@@ -97,11 +112,27 @@
 -(void)submitYourSelfy
 {
     
-    NSDictionary * newSelfy = [[NSDictionary alloc] init];
+    
+    UIImage * image = [UIImage imageNamed:@"popeye"];
+    
+    NSData * imageData = UIImagePNGRepresentation(image);
+    
+    PFFile * imageFile = [PFFile fileWithName:@"Popeye Pic" data:imageData];
+    
+    PFObject * newSelfy = [PFObject objectWithClassName:@"UserSelfy"];
+    
+    newSelfy[@"caption"] = captionField.text;
+    newSelfy[@"image"] = imageFile;
+    
+    [newSelfy saveInBackground];
+    
+    
+    
+    //NSDictionary * newSelfy = [[NSDictionary alloc] init];
     
    //newSelfy[@"caption"] = captionField.text;
     
-    [self.delegate addNewSelfy:newSelfy];
+    //[self.delegate addNewSelfy:newSelfy];
     
     
     //NewPFObject classs name "UserSelfy"

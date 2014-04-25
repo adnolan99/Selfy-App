@@ -67,7 +67,7 @@
         addNewButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 40, 80, 30)];
         settingsButton.backgroundColor = [UIColor greenColor];
         [addNewButton setTitle:@"Add New"forState:UIControlStateNormal];
-//        [addNewButton addTarget:self action:createNewUser forControlEvents:UIControlEventTouchUpInside];
+        //[addNewButton addTarget:self action:createNewUser forControlEvents:UIControlEventTouchUpInside];
         
         
         [header addSubview:addNewButton];
@@ -115,7 +115,9 @@
 
 -(void)createNewUser
 {
+    UIViewController * SVC =[[SLFSelfyViewController alloc] init];
     
+    [[self navigationController] pushViewController:SVC animated:YES];
 }
 
 
@@ -136,8 +138,13 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    
+    UIBarButtonItem * addNewSelfyButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewUser)];
+    
+    
+    
+    self.navigationItem.rightBarButtonItem = addNewSelfyButton;
 }
 
 - (void)didReceiveMemoryWarning
