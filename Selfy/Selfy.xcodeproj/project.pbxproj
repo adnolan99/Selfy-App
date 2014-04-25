@@ -33,6 +33,7 @@
 		D5EBA6451906BDBB00098B30 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBA6441906BDBB00098B30 /* SystemConfiguration.framework */; };
 		D5EBA6481906D1F400098B30 /* SLFLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA6471906D1F400098B30 /* SLFLoginController.m */; };
 		D5EBA64B1906E67C00098B30 /* SLFSelfyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA64A1906E67C00098B30 /* SLFSelfyViewController.m */; };
+		D5EBA69C1909FE4700098B30 /* got.png in Resources */ = {isa = PBXBuildFile; fileRef = D5EBA69B1909FE4700098B30 /* got.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		D5EBA6471906D1F400098B30 /* SLFLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFLoginController.m; sourceTree = "<group>"; };
 		D5EBA6491906E67C00098B30 /* SLFSelfyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSelfyViewController.h; sourceTree = "<group>"; };
 		D5EBA64A1906E67C00098B30 /* SLFSelfyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSelfyViewController.m; sourceTree = "<group>"; };
+		D5EBA69B1909FE4700098B30 /* got.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = got.png; path = ../../../../../Desktop/got.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		D5EBA60119058A6300098B30 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D5EBA69B1909FE4700098B30 /* got.png */,
 				D5EBA60219058A6300098B30 /* Selfy-Info.plist */,
 				D5EBA60319058A6300098B30 /* InfoPlist.strings */,
 				D5EBA60619058A6300098B30 /* main.m */,
@@ -280,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5EBA69C1909FE4700098B30 /* got.png in Resources */,
 				D5EBA60519058A6300098B30 /* InfoPlist.strings in Resources */,
 				D5EBA60D19058A6300098B30 /* Images.xcassets in Resources */,
 			);
@@ -512,6 +516,7 @@
 				D5EBA62519058A6400098B30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5EBA62619058A6400098B30 /* Build configuration list for PBXNativeTarget "SelfyTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +525,7 @@
 				D5EBA62819058A6400098B30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

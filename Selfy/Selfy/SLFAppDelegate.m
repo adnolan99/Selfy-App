@@ -34,6 +34,10 @@
     [Parse setApplicationId:@"9ICdECQa5kiOSYWw4v0hR449mQgihgGarGa8WEnv"
                   clientKey:@"rR34RYx4VHANSB8D0DkzzFQRy55u5fCZSTOfO19y"];
     
+    
+    
+    
+    
     [PFUser enableAutomaticUser];
     
    
@@ -43,12 +47,12 @@
     
     NSString * userName = user.username;
     
+    self.window.rootViewController = navController;
+
     //Use for testing
 
-    userName = nil;
-    
-    
-    
+    //userName = nil;
+
     if (userName == nil) {
         navController = [[UINavigationController alloc]initWithRootViewController:[[SLFLoginController alloc]initWithNibName:nil bundle:nil]];
         navController.navigationBar.hidden = YES;
@@ -58,17 +62,16 @@
 
     }
     
-    self.window.rootViewController = navController;
+//    self.window.rootViewController = navController;
     
     
     
-    //SLFLoginController * rootViewController = [[SLFLoginController alloc] initWithNibName:nil bundle:nil];
     
     //SLFSelfyViewController * rootViewController = [[SLFSelfyViewController alloc] initWithNibName:nil bundle:nil];
 
-    SLFLoginController * rootViewController = [[SLFLoginController alloc] initWithNibName:nil bundle:nil];
+    //SLFLoginController * rootViewController = [[SLFLoginController alloc] initWithNibName:nil bundle:nil];
     
-    self.window.rootViewController = rootViewController;
+    //self.window.rootViewController = rootViewController;
     
     
     

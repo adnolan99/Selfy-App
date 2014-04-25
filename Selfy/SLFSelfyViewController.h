@@ -16,6 +16,7 @@
 
 @interface SLFSelfyViewController : UIViewController
 @property (nonatomic,assign) id<SLFSelfyViewControllerDelegate> delegate;
+@property (nonatomic) NSMutableArray * profiles;
 @end
 
 

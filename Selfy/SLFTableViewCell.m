@@ -16,11 +16,7 @@
     UIImageView * userAvatar;
     UIImageView * otherImage;
     
-    
-    
 }
-
-
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -28,9 +24,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        
-        
-        
+
         userAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(20, 275, 40, 40)];
         userAvatar.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:userAvatar];

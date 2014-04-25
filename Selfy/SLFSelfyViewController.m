@@ -8,6 +8,8 @@
 
 #import "SLFSelfyViewController.h"
 
+#import "SLFTableViewController.h"
+
 @interface SLFSelfyViewController () <UITextViewDelegate>
 
 {
@@ -16,6 +18,12 @@
     UIButton * submitSelfy;
     
     UIView * newForm;
+    
+    //SLFTableViewController * SLFY;
+    
+    //UIImage * got;
+    
+    
     
 }
 
@@ -53,13 +61,22 @@
     newForm = [[UIView alloc] initWithFrame:self.view.frame];
     
     [self.view addSubview:newForm];
-    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 280, 280)];
-    imageView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
-    [newForm addSubview:imageView];
+    
+    
+    UIImageView * got = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 280, 280)];
+    
+    
+    got.image = [UIImage imageNamed:@"got"];
+    
+    //[self.contentView addSubview:got];
+    
+    
+    //UIImageView.backgroundColor = [UIColor orangeColor];
+    [newForm addSubview:got];
     
 
     captionField = [[UITextView alloc] initWithFrame:CGRectMake(10, 250, 300, 150)];
-    captionField.backgroundColor = [UIColor redColor];
+    captionField.backgroundColor = [UIColor blueColor];
     captionField.layer.cornerRadius = 10;
     captionField.keyboardType = UIKeyboardTypeTwitter;
     captionField.textColor = [UIColor blackColor];
@@ -94,14 +111,41 @@
 }
 
 
--(void)submitYourSelfy
+-(void)submitYourSelfy: (NSDictionary *) newSelfy
 {
     
-    NSDictionary * newSelfy = [[NSDictionary alloc] init];
+    //[SLFY createNewSelfy selfyImage.image];
+    
+    [self.profiles insertObject:@{
+                                  @"image":@"got",
+                                  } atIndex:0];
+    
+    
+    
+    //NSDictionary * newSelfy = [[NSDictionary alloc] init];
     
    //newSelfy[@"caption"] = captionField.text;
     
-    [self.delegate addNewSelfy:newSelfy];
+    //[self.delegate addNewSelfy:newSelfy];
+    
+    //if ([newSelfy isEqualToString:@""]) return;
+
+    
+//    @"caption":
+//    @"USER_ID":
+//    @"avatar":
+//    @"SELFY_ID"
+    
+    
+//    [TVC createNewTweet: tweetText.text];
+//    
+//    tweetText.text = @"";
+//    
+//    [self cancelEntry];
+//    
+//    [self.tableView reloadData];
+    
+    
     
     
     //NewPFObject classs name "UserSelfy"

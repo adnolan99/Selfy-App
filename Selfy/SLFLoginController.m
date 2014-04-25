@@ -13,7 +13,7 @@
 #import <Parse/Parse.h>
 
 
-@interface SLFLoginController ()
+@interface SLFLoginController () <UITextFieldDelegate>
 
 @end
 
@@ -61,28 +61,30 @@
     loginForm = [[UIView alloc] initWithFrame:self.view.frame];
     
     [self.view addSubview:loginForm];
-    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 280, 280)];
-    imageView.backgroundColor = [UIColor yellowColor];
+    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    imageView.backgroundColor = [UIColor purpleColor];
     [loginForm addSubview:imageView];
     
-    userName = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 100, 20)];
+    userName = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 150, 30)];
     userName.backgroundColor = [UIColor orangeColor];
     userName.layer.cornerRadius = 10;
     userName.placeholder = @"Username";
     userName.tintColor = [UIColor lightGrayColor];
     [userName resignFirstResponder];
+    userName.delegate = self;
     [self.view addSubview:userName];
     
-    password = [[UITextField alloc] initWithFrame:CGRectMake(20, 50, 100, 20)];
+    password = [[UITextField alloc] initWithFrame:CGRectMake(100, 140, 150, 30)];
     password.backgroundColor = [UIColor blueColor];
     password.layer.cornerRadius = 10;
     password.secureTextEntry =YES;
     password.placeholder = @"Password";
     password.tintColor = [UIColor lightGrayColor];
+    password.delegate = self;
     [self.view addSubview:password];
 
     
-    submitButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, 100, 20)];
+    submitButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 180, 150, 30)];
     submitButton.backgroundColor = [UIColor colorWithWhite:0.5 alpha:.05];
     submitButton.layer.cornerRadius = 10;
     [submitButton setTitle:@"Submit" forState:UIControlStateNormal];
@@ -105,12 +107,18 @@
          user.username = userName.text;
          user.password = password.text;
          
-         userName.text = nil;
-         password.text = nil;
          
+
+//         ??????????
+//         userName.text = nil;
+//         password.text = nil;
+         
+         
+         NSLog(@"%@ and %@",userName.text, password.text);
          
          [userName resignFirstResponder];
          [password resignFirstResponder];
+         
          
          //[UIActivityIndicatorView
          // start...
@@ -125,26 +133,31 @@
          [self.view addSubview: activityIndicator];
          
          
-         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-             
-             if (error == nil)
+        [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+         
+            if (error == nil)
              {
     
+                 
                  self.navigationController.navigationBarHidden = NO;
                  self.navigationController.viewControllers = @[[[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain]];
              }
              else
              {
-              
-                 
-                 
-//                 
+                 UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"ERROR"
+                                                                   message:@"Invalid Username and/or Password"
+                                                                  delegate:nil
+                                                         cancelButtonTitle:@"OK"
+                                                         otherButtonTitles:nil];
+
+                 [message show];
+//
 //                 UIAlertView * alert;
 //                 error.userInfo[@"error"];
-
-                 
-                 // activity indicator remove
-             }
+//
+//                 
+//                 // activity indicator remove
+            }
              
              
          }];

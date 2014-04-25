@@ -67,7 +67,7 @@
         addNewButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 40, 80, 30)];
         settingsButton.backgroundColor = [UIColor greenColor];
         [addNewButton setTitle:@"Add New"forState:UIControlStateNormal];
-//        [addNewButton addTarget:self action:createNewUser forControlEvents:UIControlEventTouchUpInside];
+        [addNewButton addTarget:self action:@selector (createNewUser) forControlEvents:UIControlEventTouchUpInside];
         
         
         [header addSubview:addNewButton];
@@ -116,6 +116,14 @@
 -(void)createNewUser
 {
     
+    
+    UIViewController * SVC =[[SLFSelfyViewController alloc] init];
+    
+    [[self navigationController] pushViewController:SVC animated:YES];
+    
+    
+    
+    //self.navigationController.viewControllers = @[[[SLFSelfyViewController alloc] initWithStyle:UITableViewStylePlain]];
 }
 
 
