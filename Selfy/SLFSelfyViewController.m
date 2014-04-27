@@ -75,21 +75,30 @@
     
     
     
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapScreen)];
+    [self.view addGestureRecognizer:tap];
     
-    
-    newForm = [[UIView alloc] initWithFrame:self.view.frame];
+    // Do any additional setup after loading the view.
+}
+
+
+-(void)createNewForm
+{
+    newForm = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height - 40)];
     
     [self.view addSubview:newForm];
-    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 280, 280)];
-    imageView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 80, 280, 280)];
+    imageView.backgroundColor = [UIColor greenColor];
     [newForm addSubview:imageView];
     
-
+    
     captionField = [[UITextView alloc] initWithFrame:CGRectMake(10, 250, 300, 150)];
     captionField.backgroundColor = [UIColor redColor];
     captionField.layer.cornerRadius = 10;
     captionField.keyboardType = UIKeyboardTypeTwitter;
     captionField.textColor = [UIColor blackColor];
+    
+    
     [newForm addSubview:captionField];
     captionField.delegate = self;
     
@@ -102,19 +111,27 @@
     [submitSelfy addTarget:self action:@selector(submitYourSelfy) forControlEvents:UIControlEventTouchUpInside];
     [newForm addSubview:submitSelfy];
     
-    
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapScreen)];
-    [self.view addGestureRecognizer:tap];
-    
-    // Do any additional setup after loading the view.
 }
 
 
 -(void)cancelNewSelfy
 {
+    [self.navigationController dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+    
+    
+    
     
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSLog(@"%@",self.view);
+    [self createNewForm];
+    
+}
 
 
 
@@ -123,7 +140,7 @@
     
     [captionField resignFirstResponder];
     [UIView animateWithDuration:0.2 animations:^{
-        newForm.frame = self.view.frame;
+        newForm.frame = CGRectMake(20, 20, 280, self.view.frame.size.height - 40);
 
     }];
 }
@@ -187,10 +204,7 @@
 */
 
 
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
+
 
 
 @end

@@ -12,6 +12,8 @@
 
 #import "SLFSelfyViewController.h"
 
+#import "SLFNewNavigationController.h"
+
 #import <Parse/Parse.h>
 
 
@@ -59,13 +61,17 @@
         
         settingsButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 80, 30)];
         settingsButton.backgroundColor = [UIColor redColor];
+        settingsButton.layer.cornerRadius = 5;
+        
         [settingsButton setTitle:@"settings"forState:UIControlStateNormal];
         [header addSubview:settingsButton];
 
         
         
         addNewButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 40, 80, 30)];
-        settingsButton.backgroundColor = [UIColor greenColor];
+        addNewButton.backgroundColor = [UIColor greenColor];
+        addNewButton.layer.cornerRadius = 5;
+        
         [addNewButton setTitle:@"Add New"forState:UIControlStateNormal];
         //[addNewButton addTarget:self action:createNewUser forControlEvents:UIControlEventTouchUpInside];
         
@@ -115,23 +121,14 @@
 
 -(void)createNewUser
 {
-    UIViewController * SVC =[[SLFSelfyViewController alloc] init];
-    
-    [[self navigationController] pushViewController:SVC animated:YES];
 
     SLFSelfyViewController * newSelfyVC = [[SLFSelfyViewController alloc] initWithNibName:nil bundle:nil];
     
     
-    UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:newSelfyVC];
+    SLFNewNavigationController * nc = [[SLFNewNavigationController alloc] initWithRootViewController:newSelfyVC];
     
     
     nc.navigationBar.barTintColor = [UIColor blueColor];
-    
-    
-    UIBarButtonItem * cancelNewSelfyButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelNewSelfy)];
-    
-    cancelNewSelfyButton.tintColor = [UIColor redColor];
-    nc.navigationItem.rightBarButtonItem = cancelNewSelfyButton;
     
     
     [self.navigationController presentViewController:nc animated:YES completion:^{
