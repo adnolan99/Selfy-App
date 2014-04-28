@@ -61,28 +61,48 @@
 }
 
 
--(void)setProfile:(NSDictionary *)profile
+-(void)setProfile:(PFObject *)profile
 {
-    //NSString *imageURLString = profile[@"avatar"];
     
-    NSURL * imageUrl = [NSURL URLWithString:profile[@"avatar"]];
-    NSData * imageData = [NSData dataWithContentsOfURL:imageUrl];
-    UIImage * image = [UIImage imageWithData:imageData];
-    userAvatar.image = image;
+    _profile = profile;
     
     
-    NSURL * imageUrl2 = [NSURL URLWithString:profile[@"image"]];
-    NSData * imageData2 = [NSData dataWithContentsOfURL:imageUrl2];
-    UIImage * image2 = [UIImage imageWithData:imageData2];
-    otherImage.image = image2;
+//NSString *imageURLString = profile[@"avatar"];
+    
+//    NSURL * imageUrl = [NSURL URLWithString:profile[@"avatar"]];
+//    NSData * imageData = [NSData dataWithContentsOfURL:imageUrl];
+//    UIImage * image = [UIImage imageWithData:imageData];
+//    userAvatar.image = image;
+    
+    
+//    NSURL * imageUrl = [NSURL URLWithString:profile[@"image"]];
+//    NSData * imageData = [NSData dataWithContentsOfURL:imageUrl];
+//    UIImage * image = [UIImage imageWithData:imageData];
+//    otherImage.image = image;
     
     
     userId.text = profile[@"USER_ID"];
-    caption.text = profile[@"caption"];
+    //caption.text = profile[@"caption"];
+    caption.text = [profile objectForKey:@"caption"];
+                    
+    PFFile * imageFile = [profile objectForKey:@"image"];
+                    
+    NSData * imageData =[imageFile getData];
+    
+    UIImage * image = [UIImage imageWithData:imageData];
+    
     //userAvatar.image = [UIImage imageWithData:profile[@"avatar"]];
     
-    _profile = profile;
-}
+    otherImage.image = image;
+
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        
+    } progressBlock:^(int percentDone) {
+        
+    }
+
+    
+];};
 
 
 
@@ -101,3 +121,11 @@
 }
 
 @end
+
+
+
+
+
+
+
+

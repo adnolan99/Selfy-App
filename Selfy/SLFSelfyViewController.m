@@ -20,6 +20,8 @@
     
     UIView * newForm;
     
+    UIImageView * Braves2;
+    
 }
 
 
@@ -33,15 +35,15 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        UIImageView * popeye = [[UIImageView alloc] initWithFrame:CGRectMake(20, 30, 20, 20)];
-        
-        
-        popeye.image = [UIImage imageNamed:@"popeye"];
+//        UIImageView * braves = [[UIImageView alloc] initWithFrame:CGRectMake(20, 30, 20, 20)];
+//        
+//        
+//        braves.image = [UIImage imageNamed:@"Braves"];
         
         //[self.contentView addSubview:popeye];
         
         
-        self.view.backgroundColor = [UIColor whiteColor];
+        //self.view.backgroundColor = [UIColor whiteColor];
         
         
         
@@ -84,15 +86,23 @@
 
 -(void)createNewForm
 {
-    newForm = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height - 40)];
     
-    [self.view addSubview:newForm];
-    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 80, 280, 280)];
+    
+    Braves2 = [[UIImageView alloc] initWithFrame:CGRectMake(20, 30, 150, 150)];
+    
+    
+    Braves2.image = [UIImage imageNamed:@"Braves2"];
+    
+    
+    newForm = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 280, self.view.frame.size.height - 40)];
+    
+    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 180, 280, 280)];
     imageView.backgroundColor = [UIColor greenColor];
-    [newForm addSubview:imageView];
+    [newForm addSubview:Braves2];
+    [self.view addSubview:newForm];
+
     
-    
-    captionField = [[UITextView alloc] initWithFrame:CGRectMake(10, 250, 300, 150)];
+    captionField = [[UITextView alloc] initWithFrame:CGRectMake(20, 250, 300, 150)];
     captionField.backgroundColor = [UIColor redColor];
     captionField.layer.cornerRadius = 10;
     captionField.keyboardType = UIKeyboardTypeTwitter;
@@ -150,11 +160,17 @@
 {
     
     
-    UIImage * image = [UIImage imageNamed:@"popeye"];
+    // connect current user to newsSelfy as parent : Parse "relational data"
     
-    NSData * imageData = UIImagePNGRepresentation(image);
     
-    PFFile * imageFile = [PFFile fileWithName:@"Popeye Pic" data:imageData];
+    
+    
+    
+//    UIImage * image = [UIImage imageNamed:@"Braves2"];
+    
+    NSData * imageData = UIImagePNGRepresentation(Braves2.image);
+    
+    PFFile * imageFile = [PFFile fileWithName:@"Braves2 Pic" data:imageData];
     
     PFObject * newSelfy = [PFObject objectWithClassName:@"UserSelfy"];
     
@@ -163,27 +179,28 @@
     
     [newSelfy saveInBackground];
     
+    [newSelfy saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"%@",succeeded);
+        
+        [self cancelNewSelfy];
+
+    }];
+    
+    
+    
     
     
     //NSDictionary * newSelfy = [[NSDictionary alloc] init];
     
-   //newSelfy[@"caption"] = captionField.text;
+    //newSelfy[@"caption"] = captionField.text;
     
     //[self.delegate addNewSelfy:newSelfy];
-    
     
     //NewPFObject classs name "UserSelfy"
     //put a png file inside app
     //PFFile
     
-    //
-    
-    
-    
-    
-    
 }
-
 
 
 - (void)didReceiveMemoryWarning

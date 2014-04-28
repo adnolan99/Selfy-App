@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import <Parse/Parse.h>
+
 @interface SLFTableViewCell : UITableViewCell
 
 
 
-@property (nonatomic) NSDictionary * profile;
+@property (nonatomic) PFObject * profile;
 
 @end

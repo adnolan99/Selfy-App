@@ -36,6 +36,7 @@
 		D5EBA69E190A9D8400098B30 /* popeye.png in Resources */ = {isa = PBXBuildFile; fileRef = D5EBA69D190A9D8400098B30 /* popeye.png */; };
 		D5EBA6A1190AEB8000098B30 /* SLFNewNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA6A0190AEB8000098B30 /* SLFNewNavigationController.m */; };
 		D5EBA6A5190E907200098B30 /* Braves.png in Resources */ = {isa = PBXBuildFile; fileRef = D5EBA6A4190E907200098B30 /* Braves.png */; };
+		D5EBA6A7190E94B100098B30 /* Braves2.png in Resources */ = {isa = PBXBuildFile; fileRef = D5EBA6A6190E94B100098B30 /* Braves2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		D5EBA69F190AEB8000098B30 /* SLFNewNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFNewNavigationController.h; sourceTree = "<group>"; };
 		D5EBA6A0190AEB8000098B30 /* SLFNewNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFNewNavigationController.m; sourceTree = "<group>"; };
 		D5EBA6A4190E907200098B30 /* Braves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Braves.png; path = ../../../../../Desktop/Braves.png; sourceTree = "<group>"; };
+		D5EBA6A6190E94B100098B30 /* Braves2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Braves2.png; path = ../../../../../Desktop/Braves2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		D5EBA60119058A6300098B30 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D5EBA6A6190E94B100098B30 /* Braves2.png */,
 				D5EBA6A4190E907200098B30 /* Braves.png */,
 				D5EBA69D190A9D8400098B30 /* popeye.png */,
 				D5EBA60219058A6300098B30 /* Selfy-Info.plist */,
@@ -294,6 +297,7 @@
 				D5EBA6A5190E907200098B30 /* Braves.png in Resources */,
 				D5EBA69E190A9D8400098B30 /* popeye.png in Resources */,
 				D5EBA60519058A6300098B30 /* InfoPlist.strings in Resources */,
+				D5EBA6A7190E94B100098B30 /* Braves2.png in Resources */,
 				D5EBA60D19058A6300098B30 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,7 +32,7 @@
     UIButton * settingsButton;
     UIButton * addNewButton;
     UILabel * headerTitle;
-    NSMutableArray * profiles;
+    NSArray * profiles;
 }
 
 
@@ -78,25 +78,28 @@
         
         [header addSubview:addNewButton];
         
-        profiles = [@[
-                     @{@"image":@"https://pbs.twimg.com/media/BlWSbUeCAAAWfrY.jpg",
-                       @"caption":@"Caption",
-                       @"USER_ID":@"User1 ID",
-                       @"avatar":@"http://m.c.lnkd.licdn.com/mpr/pub/image-WdGsCMceaQX0Eo5wC8gTIjzkQeWPka-WddbNI12iQ5T9PAB7WdGNczreQJ6PkIAju9xd/austin-nolan.jpg",
-                       @"SELFY_ID": @""
-                       },
-                     @{@"image":@"URL",
-                       @"caption":@"Caption",
-                       @"USER_ID":@"User2 ID",
-                       @"avatar":@"Image URL"
-                       },
-                     @{@"image":@"URL",
-                       @"caption":@"Caption",
-                       @"USER_ID":@"User3 ID",
-                       @"avatar":@"Image URL"
-                       }] mutableCopy];
-                
+//        profiles = @[
+//                     @{@"image":@"https://pbs.twimg.com/media/BlWSbUeCAAAWfrY.jpg",
+//                       @"caption":@"Caption",
+//                       @"USER_ID":@"User1 ID",
+//                       @"avatar":@"http://m.c.lnkd.licdn.com/mpr/pub/image-WdGsCMceaQX0Eo5wC8gTIjzkQeWPka-WddbNI12iQ5T9PAB7WdGNczreQJ6PkIAju9xd/austin-nolan.jpg",
+//                       @"SELFY_ID": @""
+//                       },
+//                     @{@"image":@"URL",
+//                       @"caption":@"Caption",
+//                       @"USER_ID":@"User2 ID",
+//                       @"avatar":@"Image URL"
+//                       },
+//                     @{@"image":@"URL",
+//                       @"caption":@"Caption",
+//                       @"USER_ID":@"User3 ID",
+//                       @"avatar":@"Image URL"
+//                       }];
+        
 
+//        [self refreshSelfies];
+        
+        
 //        
 //        PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
 //        testObject[@"foo"] = @"bar";
@@ -130,29 +133,18 @@
     
     nc.navigationBar.barTintColor = [UIColor blueColor];
     
-    
     [self.navigationController presentViewController:nc animated:YES completion:^{
-    
-    
-    
-    
     
     
     }];
 
-
-
 }
-
 
 
 -(void)settingsMenu
 {
     
 }
-
-
-
 
 
 - (void)viewDidLoad
@@ -171,6 +163,14 @@
     self.navigationItem.rightBarButtonItem = addNewSelfyButton;
 }
 
+
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self refreshSelfies];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -180,7 +180,47 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
+//    PFQuery * query =[PFQuery queryWithClassName:@"UserSelfy"];
+//    
+//    profiles =  [query findObjects];
+    
+//    NSLog(@"%@",profiles);
+//    
+//    for (PFObject * userSelfy in profiles)
+//    
+//    {
+//        NSLog (@"image: %@", [userSelfy objectForKey:@"image"]);
+//    }
+    
+    
+   
     return [profiles count];
+}
+
+-(void)refreshSelfies
+{
+    PFQuery * query =[PFQuery queryWithClassName:@"UserSelfy"];
+    
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    
+    
+        profiles = objects;
+        
+        [self.tableView reloadData];
+    
+    }];
+
+
+    // change order by created date : newest first
+    // after user connected to selfy : filter only your user's selfies
+    
+    
+    
+    
+    
+    
 }
 
 
