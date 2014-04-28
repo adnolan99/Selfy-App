@@ -24,9 +24,29 @@
     
     UITextField * password;
     
+    UITextField * createUserName;
+    
+    UITextField * createPassword;
+    
+    UITextField * createDisplayName;
+    
+    UITextField * enterEmailAddress;
+    
+    
+    
     UIButton * submitButton;
     
+    UIButton * goToLoginPage;
+    
+    UIButton * goToSignUpPage;
+    
+    UIButton * createAccountButton;
+    
     UIView * loginForm;
+    
+    UIView * signUpForm;
+    
+    UIView * signInOrUp;
 
 }
 
@@ -57,38 +77,34 @@
 {
     [super viewDidLoad];
     
+    [self.view addSubview:signInOrUp];
     
-    loginForm = [[UIView alloc] initWithFrame:self.view.frame];
+    goToLoginPage = [[UIButton alloc] initWithFrame:CGRectMake(85,110, 150, 30)];
+    goToLoginPage.backgroundColor = [UIColor blueColor];
+    goToLoginPage.layer.cornerRadius = 10;
+    [goToLoginPage setTitle:@"Sign In" forState:UIControlStateNormal];
+    //submitButton.backgroundColor = [UIColor blueColor];
+    [goToLoginPage addTarget:self action:@selector(takeMeToSignIn) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:goToLoginPage];
     
-    [self.view addSubview:loginForm];
-    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    imageView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
-    [loginForm addSubview:imageView];
     
-    userName = [[UITextField alloc] initWithFrame:CGRectMake(20, 60, 100, 20)];
-    userName.backgroundColor = [UIColor colorWithWhite:0.1 alpha:.05];
-    userName.layer.cornerRadius = 10;
-    userName.placeholder = @"Username";
-    userName.tintColor = [UIColor lightGrayColor];
-    [userName resignFirstResponder];
-    [self.view addSubview:userName];
     
-    password = [[UITextField alloc] initWithFrame:CGRectMake(20, 90, 100, 20)];
-    password.backgroundColor = [UIColor colorWithWhite:0.1 alpha:.05];
-    password.layer.cornerRadius = 10;
-    password.secureTextEntry =YES;
-    password.placeholder = @"Password";
-    password.tintColor = [UIColor lightGrayColor];
-    [self.view addSubview:password];
-
     
-    submitButton = [[UIButton alloc] initWithFrame:CGRectMake(20,120, 100, 20)];
-    submitButton.backgroundColor = [UIColor colorWithWhite:0.5 alpha:.05];
-    submitButton.layer.cornerRadius = 10;
-    [submitButton setTitle:@"Submit" forState:UIControlStateNormal];
-    submitButton.tintColor = [UIColor lightGrayColor];
-    [submitButton addTarget:self action:@selector(userLogin) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:submitButton];
+    
+    goToSignUpPage = [[UIButton alloc] initWithFrame:CGRectMake(85,190, 150, 30)];
+    goToSignUpPage.backgroundColor = [UIColor blueColor];
+    goToSignUpPage.layer.cornerRadius = 10;
+    [goToSignUpPage setTitle:@"Sign Up" forState:UIControlStateNormal];
+    //goToSignUpPage.backgroundColor = [UIColor blueColor];
+    [goToSignUpPage addTarget:self action:@selector(takeMeToSignUp) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:goToSignUpPage];
+    
+    
+    
+    
+    
+    
+    
     
     
     // Do any additional setup after loading the view.
@@ -96,11 +112,119 @@
 
 
 
+-(void)takeMeToSignIn
+{
+    
+    loginForm = [[UIView alloc] initWithFrame:self.view.frame];
+
+    [signInOrUp removeFromSuperview];
+    
+    [self.view addSubview:loginForm];
+    
+    
+    
+    
+    //[self.view addSubview:loginForm];
+    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    imageView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+    [loginForm addSubview:imageView];
+    
+    userName = [[UITextField alloc] initWithFrame:CGRectMake(85, 110, 150, 30)];
+    userName.backgroundColor = [UIColor colorWithWhite:0.1 alpha:.2];
+    userName.layer.cornerRadius = 10;
+    userName.placeholder = @"Username";
+    userName.tintColor = [UIColor whiteColor];
+    [userName resignFirstResponder];
+    [self.view addSubview:userName];
+    
+    password = [[UITextField alloc] initWithFrame:CGRectMake(85, 150, 150, 30)];
+    password.backgroundColor = [UIColor colorWithWhite:0.1 alpha:.2];
+    password.layer.cornerRadius = 10;
+    password.secureTextEntry =YES;
+    password.placeholder = @"Password";
+    password.tintColor = [UIColor whiteColor];
+    [self.view addSubview:password];
+    
+    
+    submitButton = [[UIButton alloc] initWithFrame:CGRectMake(85,190, 150, 30)];
+    submitButton.backgroundColor = [UIColor blueColor];
+    submitButton.layer.cornerRadius = 10;
+    [submitButton setTitle:@"Sign In" forState:UIControlStateNormal];
+    //submitButton.backgroundColor = [UIColor blueColor];
+    [submitButton addTarget:self action:@selector(userLogin) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:submitButton];
+    
+    
+    
+    
+}
+
+
+-(void)takeMeToSignUp
+{
+    
+    //NSLog(@"Press");
+    
+    signUpForm = [[UIView alloc] initWithFrame:self.view.frame];
+
+    [signInOrUp removeFromSuperview];
+    
+    [self.view addSubview: signUpForm];
+    signUpForm.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+
+    
+    createUserName = [[UITextField alloc] initWithFrame:CGRectMake(85, 450, 150, 30)];
+    createUserName.backgroundColor = [UIColor lightGrayColor];
+    createUserName.layer.cornerRadius = 10;
+    createUserName.placeholder = @"Create a Username";
+
+    [signUpForm addSubview:createUserName];
+    
+    createPassword = [[UITextField alloc] initWithFrame:CGRectMake(85, 490, 150, 30)];
+    createPassword.backgroundColor = [UIColor lightGrayColor];
+    createPassword.layer.cornerRadius = 10;
+    createPassword.placeholder = @"Create a Password";
+
+    [signUpForm addSubview:createPassword];
+    
+    createDisplayName = [[UITextField alloc] initWithFrame:CGRectMake(85, 530, 150, 30)];
+    createDisplayName.backgroundColor = [UIColor lightGrayColor];
+    createDisplayName.layer.cornerRadius = 10;
+    createDisplayName.placeholder = @"Display Name";
+
+    [signUpForm addSubview:createDisplayName];
+    
+    enterEmailAddress = [[UITextField alloc] initWithFrame:CGRectMake(85, 570, 150, 30)];
+    enterEmailAddress.backgroundColor = [UIColor lightGrayColor];
+    enterEmailAddress.layer.cornerRadius = 10;
+    enterEmailAddress.placeholder = @"Enter Your Email Address";
+
+    [signUpForm addSubview:enterEmailAddress];
+    
+    createAccountButton = [[UIButton alloc] initWithFrame:CGRectMake(85, 610, 150, 30)];
+    createAccountButton.backgroundColor = [UIColor blueColor];
+    createAccountButton.layer.cornerRadius = 10;
+    [createAccountButton setTitle:@"Sign Up" forState:UIControlStateNormal];
+
+    [signUpForm addSubview:createAccountButton];
+
+    
+    
+        [UIView animateWithDuration:0.1 animations:^{
+      signUpForm.frame = CGRectMake(0, -300, 320, 1000);
+    }];
+
+}
+
+
 
 //remove auto Caps, animate login fields up if you are not already.
 
-
-
+-(void)backToSignInOrUp
+{
+    
+    
+}
 
 
 
