@@ -45,13 +45,13 @@
     
     //Use for testing
 
-    //userName = nil;
+    userName = nil;
     
 
     
     if (userName == nil) {
         navController = [[UINavigationController alloc]initWithRootViewController:[[SLFLoginController alloc]initWithNibName:nil bundle:nil]];
-        navController.navigationBar.hidden = YES;
+        navController.navigationBar.hidden = NO;
 
     } else {
         navController = [[UINavigationController alloc]initWithRootViewController:[[SLFTableViewController alloc]initWithStyle: UITableViewStylePlain]];

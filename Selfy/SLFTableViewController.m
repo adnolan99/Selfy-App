@@ -49,9 +49,9 @@
     if (self) {
         // Custom initialization
     
-        header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
-        header.backgroundColor = [UIColor grayColor];
-        self.tableView.tableHeaderView = header;
+//        header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+//        header.backgroundColor = [UIColor grayColor];
+//        self.tableView.tableHeaderView = header;
         
         
         headerTitle = [[UILabel alloc]initWithFrame:CGRectMake(160, 20, 100, 30)];
@@ -202,6 +202,11 @@
 {
     PFQuery * query =[PFQuery queryWithClassName:@"UserSelfy"];
     
+    //change order by created date
+    [query orderByDescending:@"createdAt"];
+    
+    //filter only your user's selfies
+    [query whereKey:@"parent" equalTo:[PFUser currentUser]];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
     

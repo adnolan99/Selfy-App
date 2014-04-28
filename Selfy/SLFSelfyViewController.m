@@ -177,10 +177,12 @@
     newSelfy[@"caption"] = captionField.text;
     newSelfy[@"image"] = imageFile;
     
+    newSelfy[@"parent"]= [PFUser currentUser];
+    
     [newSelfy saveInBackground];
     
     [newSelfy saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        NSLog(@"%@",succeeded);
+        NSLog(@"%hhd",succeeded);
         
         [self cancelNewSelfy];
 
