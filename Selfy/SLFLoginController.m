@@ -205,7 +205,7 @@
     createAccountButton.backgroundColor = [UIColor blueColor];
     createAccountButton.layer.cornerRadius = 10;
     [createAccountButton setTitle:@"Sign Up" forState:UIControlStateNormal];
-
+    [createAccountButton addTarget:self action:@selector(userLogin) forControlEvents:UIControlEventTouchUpInside];
     [signUpForm addSubview:createAccountButton];
 
     
@@ -281,13 +281,23 @@
                  
                  // activity indicator remove
              }
-             
-             
          }];
          
          NSLog(@"Submitting");
      }
-     
+
+
+
+
+-(void)userSignUp
+{
+    
+    
+    
+    
+}
+
+
      
 
 - (BOOL)textFieldShouldBeginEditing:(UITextView *)textView
