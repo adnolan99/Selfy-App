@@ -10,6 +10,10 @@
 
 #import "SLFTableViewController.h"
 
+#import "SLFSignUpViewController.h"
+
+#import "SLFNewNavigationController.h"
+
 #import <Parse/Parse.h>
 
 
@@ -25,6 +29,8 @@
     UITextField * password;
     
     UIButton * submitButton;
+    
+    UIButton * signUpButton;
     
     UIView * loginForm;
 
@@ -91,6 +97,19 @@
     [self.view addSubview:submitButton];
     
     
+    
+    signUpButton = [[UIButton alloc] initWithFrame:CGRectMake(20,120, 100, 20)];
+
+    
+    signUpButton = [[UIButton alloc] initWithFrame:CGRectMake(20,150, 100, 20)];
+    signUpButton.backgroundColor = [UIColor colorWithWhite:0.5 alpha:.05];
+    signUpButton.layer.cornerRadius = 10;
+    [signUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
+    signUpButton.tintColor = [UIColor lightGrayColor];
+    [signUpButton addTarget:self action:@selector(showSignUp) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:signUpButton];
+    
+    
     // Do any additional setup after loading the view.
 }
 
@@ -101,29 +120,92 @@
 
 
 
-
+-(void)showSignUp
+{
+    
+   
+        
+        SLFSignUpViewController * newSelfyVC = [[SLFSignUpViewController alloc] initWithNibName:nil bundle:nil];
+        
+        
+        SLFNewNavigationController * nc = [[SLFNewNavigationController alloc] initWithRootViewController:newSelfyVC];
+        
+        
+        nc.navigationBar.barTintColor = [UIColor blueColor];
+        
+        [self.navigationController presentViewController:nc animated:YES completion:^{
+            
+            
+        }];
+        
+    }
+    
+    
 
 
 -(void)userLogin
      {
-         PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-         testObject[@"Username"] = @"bar";
-         [testObject saveInBackground];
+
          
-         PFUser * user = [PFUser currentUser];
          
-         user.username = userName.text;
-         user.password = password.text;
-         
-         userName.text = nil;
-         password.text = nil;
+         //         PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+//         testObject[@"Username"] = @"bar";
+//         [testObject saveInBackground];
+//         
+//         PFUser * user = [PFUser currentUser];
+//         
+//         user.username = userName.text;
+//         user.password = password.text;
+//         
+//         userName.text = nil;
+//         password.text = nil;
          
          
          UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
          activityIndicator.color= [UIColor redColor];
          activityIndicator.frame = CGRectMake(0, 10, 100, 50);
          
+         [loginForm addSubview:activityIndicator];
+         
          [activityIndicator startAnimating];
+         
+         
+         [PFUser logInWithUsernameInBackground:userName.text password:password.text block:^(PFUser *user, NSError *error) {
+             
+             
+                 if (error == nil)
+                 {
+                     
+                     self.navigationController.navigationBarHidden = NO;
+                     self.navigationController.viewControllers = @[[[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain]];
+                 }
+                 else
+                 {
+                     
+                     password.text = nil;
+                     
+                     [activityIndicator removeFromSuperview];
+                     
+                     NSString * errorDescription = error.userInfo[@"error"];
+                     
+                     UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"UserName Taken" message:errorDescription delegate:self cancelButtonTitle:@"Try Another Username" otherButtonTitles:nil];
+                     
+                     
+                     [alertView show];
+                     
+                     //error.userInfo[@"error"]
+                     //UIAlertView with message
+                     
+                     // activity indicator remove
+                 }
+                 
+                 
+             }];
+             
+         }
+         
+         
+         
          
          
          
@@ -134,35 +216,8 @@
          
          
          
-         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-             
-             if (error == nil)
-             {
-    
-                 self.navigationController.navigationBarHidden = NO;
-                 self.navigationController.viewControllers = @[[[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain]];
-             }
-             else
-             {
-                 
-                 NSString * errorDescription = error.userInfo[@"error"];
-                 
-                 UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"" message:errorDescription delegate:@"Try Again" cancelButtonTitle:@"ALERT" otherButtonTitles:nil, nil];
-                 
-                 
-                 [alertView show];
-                 
-                 //error.userInfo[@"error"]
-                 //UIAlertView with message
-                 
-                 // activity indicator remove
-             }
-             
-             
-         }];
          
-         NSLog(@"Submitting");
-     }
+
      
      
 
@@ -173,6 +228,12 @@
     }];
     return YES;
 }
+
+
+
+
+
+
 
 
 
