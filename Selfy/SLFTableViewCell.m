@@ -115,16 +115,10 @@
         [avatarFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             userAvatar.image =[UIImage imageWithData:data];
         }];
-        
     }];
-    
-    
-    
-    
-    
-   
-    
 }
+
+
     - (void)awakeFromNib
     {
         // Initialization code
