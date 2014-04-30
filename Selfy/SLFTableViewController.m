@@ -14,6 +14,10 @@
 
 #import "SLFNewNavigationController.h"
 
+#import "SLFSettingsButton.h"
+
+#import "SLFSettingsViewController.h"
+
 #import <Parse/Parse.h>
 
 
@@ -29,10 +33,16 @@
 {
     
     UIView * header;
-    UIButton * settingsButton;
+    //UIButton * settingsButton;
     UIButton * addNewButton;
     UILabel * headerTitle;
     NSArray * profiles;
+    
+    SLFSettingsButton * settingsView;
+    
+    SLFSettingsViewController * settingsVC;
+    
+    
 }
 
 
@@ -59,12 +69,12 @@
         [header addSubview:headerTitle];
         
         
-        settingsButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 80, 30)];
-        settingsButton.backgroundColor = [UIColor redColor];
-        settingsButton.layer.cornerRadius = 5;
-        
-        [settingsButton setTitle:@"settings"forState:UIControlStateNormal];
-        [header addSubview:settingsButton];
+//        settingsButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 80, 30)];
+//        settingsButton.backgroundColor = [UIColor redColor];
+//        settingsButton.layer.cornerRadius = 5;
+//        
+//        [settingsButton setTitle:@"settings"forState:UIControlStateNormal];
+//        [header addSubview:settingsButton];
 
         
         
@@ -143,6 +153,30 @@
 
 -(void)settingsMenu
 {
+  
+    [settingsView toggle];
+    
+    int X = [settingsView isToggled] ? SCREEN_WIDTH -50 : 0;
+    
+    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        
+        self.navigationController.view.frame = CGRectMake(X, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    
+    }completion:^(BOOL finished) {
+        
+        if(![settingsView isToggled])
+        {
+            [settingsVC.view removeFromSuperview];
+        }
+    }];
+    
+    if([settingsView isToggled])
+    {
+    settingsVC = [[SLFSettingsViewController alloc] initWithNibName:nil bundle:nil];
+        settingsVC.view.frame = CGRectMake(50 - SCREEN_WIDTH, 0, SCREEN_WIDTH-50, SCREEN_HEIGHT);
+        
+        [self.navigationController.view addSubview:settingsVC.view];
+    }
     
 }
 
@@ -158,9 +192,25 @@
     
     UIBarButtonItem * addNewSelfyButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewUser)];
     
-    
-    
     self.navigationItem.rightBarButtonItem = addNewSelfyButton;
+    
+    
+    
+    
+    settingsView = [[SLFSettingsButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    
+    [settingsView addTarget:self action:@selector(settingsMenu) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem * settingsButton = [[UIBarButtonItem alloc] initWithCustomView:settingsView];
+
+    settingsView.toggledTintColor = [UIColor orangeColor];
+    
+    self.navigationItem.leftBarButtonItem = settingsButton;
+    
+    
+    
+    
+    
 }
 
 

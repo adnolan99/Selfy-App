@@ -38,6 +38,8 @@
 		D5EBA6A5190E907200098B30 /* Braves.png in Resources */ = {isa = PBXBuildFile; fileRef = D5EBA6A4190E907200098B30 /* Braves.png */; };
 		D5EBA6A7190E94B100098B30 /* Braves2.png in Resources */ = {isa = PBXBuildFile; fileRef = D5EBA6A6190E94B100098B30 /* Braves2.png */; };
 		D5EBA6AA190FDD3600098B30 /* SLFSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA6A9190FDD3600098B30 /* SLFSignUpViewController.m */; };
+		D5EBA6B319112E1B00098B30 /* SLFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA6B219112E1B00098B30 /* SLFSettingsViewController.m */; };
+		D5EBA6B619112E7D00098B30 /* SLFSettingsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EBA6B519112E7D00098B30 /* SLFSettingsButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,10 @@
 		D5EBA6A6190E94B100098B30 /* Braves2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Braves2.png; path = ../../../../../Desktop/Braves2.png; sourceTree = "<group>"; };
 		D5EBA6A8190FDD3600098B30 /* SLFSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSignUpViewController.h; sourceTree = "<group>"; };
 		D5EBA6A9190FDD3600098B30 /* SLFSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSignUpViewController.m; sourceTree = "<group>"; };
+		D5EBA6B119112E1B00098B30 /* SLFSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSettingsViewController.h; sourceTree = "<group>"; };
+		D5EBA6B219112E1B00098B30 /* SLFSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSettingsViewController.m; sourceTree = "<group>"; };
+		D5EBA6B419112E7D00098B30 /* SLFSettingsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSettingsButton.h; sourceTree = "<group>"; };
+		D5EBA6B519112E7D00098B30 /* SLFSettingsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSettingsButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,10 @@
 		D5EBA5EE19058A6300098B30 = {
 			isa = PBXGroup;
 			children = (
+				D5EBA6B119112E1B00098B30 /* SLFSettingsViewController.h */,
+				D5EBA6B219112E1B00098B30 /* SLFSettingsViewController.m */,
+				D5EBA6B419112E7D00098B30 /* SLFSettingsButton.h */,
+				D5EBA6B519112E7D00098B30 /* SLFSettingsButton.m */,
 				D5EBA62F1905A89F00098B30 /* SLFTableViewCell.h */,
 				D5EBA6301905A89F00098B30 /* SLFTableViewCell.m */,
 				D5EBA62919058AB400098B30 /* SLFTableViewController.h */,
@@ -324,7 +334,9 @@
 			files = (
 				D5EBA6481906D1F400098B30 /* SLFLoginController.m in Sources */,
 				D5EBA6A1190AEB8000098B30 /* SLFNewNavigationController.m in Sources */,
+				D5EBA6B619112E7D00098B30 /* SLFSettingsButton.m in Sources */,
 				D5EBA60B19058A6300098B30 /* SLFAppDelegate.m in Sources */,
+				D5EBA6B319112E1B00098B30 /* SLFSettingsViewController.m in Sources */,
 				D5EBA60719058A6300098B30 /* main.m in Sources */,
 				D5EBA6311905A89F00098B30 /* SLFTableViewCell.m in Sources */,
 				D5EBA64B1906E67C00098B30 /* SLFSelfyViewController.m in Sources */,

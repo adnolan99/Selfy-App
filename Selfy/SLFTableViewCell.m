@@ -54,8 +54,8 @@
         
         
         //otherImage
-
-
+        
+        
     }
     return self;
 }
@@ -67,26 +67,26 @@
     _profile = profile;
     
     
-//NSString *imageURLString = profile[@"avatar"];
+    //NSString *imageURLString = profile[@"avatar"];
     
-//    NSURL * imageUrl = [NSURL URLWithString:profile[@"avatar"]];
-//    NSData * imageData = [NSData dataWithContentsOfURL:imageUrl];
-//    UIImage * image = [UIImage imageWithData:imageData];
-//    userAvatar.image = image;
+    //    NSURL * imageUrl = [NSURL URLWithString:profile[@"avatar"]];
+    //    NSData * imageData = [NSData dataWithContentsOfURL:imageUrl];
+    //    UIImage * image = [UIImage imageWithData:imageData];
+    //    userAvatar.image = image;
     
     
-//    NSURL * imageUrl = [NSURL URLWithString:profile[@"image"]];
-//    NSData * imageData = [NSData dataWithContentsOfURL:imageUrl];
-//    UIImage * image = [UIImage imageWithData:imageData];
-//    otherImage.image = image;
+    //    NSURL * imageUrl = [NSURL URLWithString:profile[@"image"]];
+    //    NSData * imageData = [NSData dataWithContentsOfURL:imageUrl];
+    //    UIImage * image = [UIImage imageWithData:imageData];
+    //    otherImage.image = image;
     
     
     userId.text = profile[@"USER_ID"];
     //caption.text = profile[@"caption"];
     caption.text = [profile objectForKey:@"caption"];
-                    
+    
     PFFile * imageFile = [profile objectForKey:@"image"];
-                    
+    
     NSData * imageData =[imageFile getData];
     
     UIImage * image = [UIImage imageWithData:imageData];
@@ -94,38 +94,55 @@
     //userAvatar.image = [UIImage imageWithData:profile[@"avatar"]];
     
     otherImage.image = image;
-
+    
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         
     } progressBlock:^(int percentDone) {
         
-    }
-
+     }];
     
-];};
-
-
-
-
-
-- (void)awakeFromNib
-{
-    // Initialization code
+    
+    PFUser * user = [profile objectForKey:@"parent"];
+    
+    [user fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        
+        NSLog(@"%@", object);
+        
+      
+        
+        PFFile * avatarFile = [object objectForKey:@"avatar"];
+        
+        [avatarFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            userAvatar.image =[UIImage imageWithData:data];
+        }];
+        
+    }];
+    
+    
+    
+    
+    
+   
+    
 }
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
-@end
-
-
-
-
-
-
-
-
+    - (void)awakeFromNib
+    {
+        // Initialization code
+    }
+    
+    - (void)setSelected:(BOOL)selected animated:(BOOL)animated
+    {
+        [super setSelected:selected animated:animated];
+        
+        // Configure the view for the selected state
+    }
+    
+    @end
+    
+    
+    
+    
+    
+    
+    
+    

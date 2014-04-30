@@ -26,6 +26,7 @@
 //    UITextField * displayNameField;
 //    UITextField * passwordField;
 //    UITextField * emailField;
+    UIButton * signUpButton;
     UIImageView * avatar;
     NSArray * fieldsNames;
     
@@ -82,8 +83,10 @@
         
         [signupForm addSubview:textField];
         
-        
-    
+        signUpButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 340, 280, 40)];
+        signUpButton.backgroundColor = [UIColor greenColor];
+        [signUpButton addTarget:self action:@selector(signup) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:signUpButton];
     }
     
 //    usernameField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 10, 40)];
@@ -128,13 +131,20 @@
   
     PFUser * user = [PFUser user];
     
+    UIImage * avatarImage = [UIImage imageNamed:@"Braves"];
     
+    NSData * imageData = UIImagePNGRepresentation(avatarImage);
+    
+    
+    //NSData * imageData = UIImagePNGRepresentation(avatar.image);
+    
+    PFFile * imageFile = [PFFile fileWithName:@"avatar.png" data:imageData];
     
     user.username = ((UITextField *)fields [0]).text;
     user.password = ((UITextField *)fields [1]).text;
     user.email = ((UITextField *)fields [3]).text;
-    user[@"Create Display Name"] = ((UITextField *)fields [2]).text;
-    
+    user[@"createDisplay"] = ((UITextField *)fields [2]).text;
+    user[@"avatar"] = imageFile;
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error == nil)
