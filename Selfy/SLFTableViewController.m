@@ -132,6 +132,22 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -(void)createNewUser
 {
 
@@ -203,7 +219,7 @@
     
     UIBarButtonItem * settingsButton = [[UIBarButtonItem alloc] initWithCustomView:settingsView];
 
-    settingsView.toggledTintColor = [UIColor orangeColor];
+    settingsView.toggledTintColor = [UIColor purpleColor];
     
     self.navigationItem.leftBarButtonItem = settingsButton;
     

@@ -45,7 +45,7 @@
     
     //Use for testing
 
-    userName = nil;
+    //userName = nil;
     
 
     

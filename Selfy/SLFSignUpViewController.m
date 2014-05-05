@@ -66,7 +66,6 @@
     {
         NSInteger index = [fieldsNames indexOfObject:name];
         
-        
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(0, (index * 50), 280, 40)];
         
         textField.backgroundColor = [UIColor orangeColor];
@@ -75,11 +74,9 @@
         textField.tintColor = [UIColor orangeColor];
         textField.delegate = self;
         
-        
         [textField resignFirstResponder];
         
         [fields addObject:textField];
-        
         
         [signupForm addSubview:textField];
         
@@ -104,7 +101,6 @@
 //    passwordField.placeholder = @"Create Password";
 //    passwordField.tintColor = [UIColor orangeColor];
 //    [self.view addSubview:passwordField];
-//    
 //
 //    emailField = [[UITextField alloc] initWithFrame:CGRectMake(20, 90, 100, 20)];
 //    emailField.backgroundColor = [UIColor colorWithWhite:0.1 alpha:.05];
@@ -121,22 +117,18 @@
 //    displayNameField.placeholder = @"Create Display Name";
 //    displayNameField.tintColor = [UIColor orangeColor];
 //    [self.view addSubview:displayNameField];
-    
-
 }
 
 
 -(void)signup
 {
-  
     PFUser * user = [PFUser user];
     
     UIImage * avatarImage = [UIImage imageNamed:@"Braves"];
     
     NSData * imageData = UIImagePNGRepresentation(avatarImage);
     
-    
-    //NSData * imageData = UIImagePNGRepresentation(avatar.image);
+//  NSData * imageData = UIImagePNGRepresentation(avatar.image);
     
     PFFile * imageFile = [PFFile fileWithName:@"avatar.png" data:imageData];
     
@@ -154,27 +146,17 @@
             pnc.navigationBarHidden = NO;
             pnc.viewControllers = @[[[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain]];
             
-            
-            
-            
             [self cancelSignUp];
-            
-            
         }
         else
         {
-            
             NSString * errorDescription = error.userInfo[@"error"];
             
             UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"UsernameTaken" message:errorDescription delegate:self cancelButtonTitle:@"Try Another Username" otherButtonTitles:nil];
             
             [alertView show];
-            
-            
-            
         }
     }];
-    
 }
 
 
@@ -186,16 +168,12 @@
 }
 
 
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
      
-        
         self.view.backgroundColor = [UIColor purpleColor];
-        
         
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
         [self.view addGestureRecognizer:tap];
@@ -204,6 +182,7 @@
     }
     return self;
 }
+
 
 -(void)hideKeyboard
 {
@@ -216,7 +195,6 @@
         signupForm.frame = CGRectMake(20, signupOrigY - 50, 280, 240);
     }];
 }
-
 
 
 - (void)viewDidLoad
@@ -251,10 +229,8 @@
 //}
 
 
-
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    
     NSInteger index = [fields indexOfObject:textField];
     
     int extraSlide = index * 15 +75;
@@ -270,22 +246,11 @@
         extraSlide = index * 25 + 65;
     }
     
-
-    
-
-    
-    
-    
-    
-    
     [UIView animateWithDuration:0.2 animations:^{
              signupForm.frame = CGRectMake(20, signupOrigY -extraSlide, 280, 240);
            }];
 }
-     
-     
-     
-     
+
      
 - (void)didReceiveMemoryWarning
 {

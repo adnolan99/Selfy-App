@@ -8,6 +8,8 @@
 
 #import "SLFTableViewCell.h"
 
+
+
 @implementation SLFTableViewCell
 
 {
@@ -36,7 +38,7 @@
         [self.contentView addSubview:userAvatar];
         
         otherImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 240, 240)];
-        otherImage.backgroundColor = [UIColor orangeColor];
+        otherImage.backgroundColor = [UIColor purpleColor];
         [self.contentView addSubview:otherImage];
         
         userId = [[UILabel alloc] initWithFrame:(CGRectMake(80, 270, 100, 30))];

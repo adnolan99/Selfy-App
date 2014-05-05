@@ -43,8 +43,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        
-        
 //        PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
 //        testObject[@"foo"] = @"bar";
 //        [testObject saveInBackground];
@@ -59,10 +57,10 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     
     loginForm = [[UIView alloc] initWithFrame:self.view.frame];
     
@@ -87,7 +85,6 @@
     password.tintColor = [UIColor lightGrayColor];
     [self.view addSubview:password];
 
-    
     submitButton = [[UIButton alloc] initWithFrame:CGRectMake(20,120, 100, 20)];
     submitButton.backgroundColor = [UIColor colorWithWhite:0.5 alpha:.05];
     submitButton.layer.cornerRadius = 10;
@@ -96,11 +93,7 @@
     [submitButton addTarget:self action:@selector(userLogin) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:submitButton];
     
-    
-    
     signUpButton = [[UIButton alloc] initWithFrame:CGRectMake(20,120, 100, 20)];
-
-    
     signUpButton = [[UIButton alloc] initWithFrame:CGRectMake(20,150, 100, 20)];
     signUpButton.backgroundColor = [UIColor colorWithWhite:0.5 alpha:.05];
     signUpButton.layer.cornerRadius = 10;
@@ -109,38 +102,23 @@
     [signUpButton addTarget:self action:@selector(showSignUp) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:signUpButton];
     
-    
-    // Do any additional setup after loading the view.
+//   Do any additional setup after loading the view.
 }
-
-
-
 
 //remove auto Caps, animate login fields up if you are not already.
 
 
-
 -(void)showSignUp
 {
-    
-   
-        
         SLFSignUpViewController * newSelfyVC = [[SLFSignUpViewController alloc] initWithNibName:nil bundle:nil];
-        
-        
+    
         SLFNewNavigationController * nc = [[SLFNewNavigationController alloc] initWithRootViewController:newSelfyVC];
-        
-        
+    
         nc.navigationBar.barTintColor = [UIColor blueColor];
         
         [self.navigationController presentViewController:nc animated:YES completion:^{
-            
-            
         }];
-        
     }
-    
-    
 
 
 -(void)userLogin
